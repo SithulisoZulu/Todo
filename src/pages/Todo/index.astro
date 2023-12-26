@@ -1,0 +1,308 @@
+---
+import TodoLayout from '../../layouts/TodoLayout.astro'
+import TopNav from '../../components/Todo/TopNav.astro'
+import Footer from '../../components/Todo/Footer.astro'
+import { allTasks } from '../../data/tasks'
+
+const tasks = allTasks
+---
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dialog.js"></script>
+
+<!-- component -->
+<TodoLayout title="Todo List"></TodoLayout>
+<div class="min-h-screen bg-gray-50/50">
+    <div class="p-4 xl:ml-80">
+      <TopNav page="My Todo List"/>
+      <div class="mt-12">
+        <div class="hidden mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+          <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+            <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+                <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"></path>
+                <path fill-rule="evenodd" d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z" clip-rule="evenodd"></path>
+                <path d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z"></path>
+              </svg>
+            </div>
+            <div class="p-4 text-right">
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Today's Money</p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">$53k</h4>
+            </div>
+            <div class="border-t border-blue-gray-50 p-4">
+              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                <strong class="text-green-500">+55%</strong>&nbsp;than last week
+              </p>
+            </div>
+          </div>
+          <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+            <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-pink-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+                <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="p-4 text-right">
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Today's Users</p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">2,300</h4>
+            </div>
+            <div class="border-t border-blue-gray-50 p-4">
+              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                <strong class="text-green-500">+3%</strong>&nbsp;than last month
+              </p>
+            </div>
+          </div>
+          <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+            <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-green-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+                <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"></path>
+              </svg>
+            </div>
+            <div class="p-4 text-right">
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">New Clients</p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">3,462</h4>
+            </div>
+            <div class="border-t border-blue-gray-50 p-4">
+              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                <strong class="text-red-500">-2%</strong>&nbsp;than yesterday
+              </p>
+            </div>
+          </div>
+          <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+            <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-orange-600 to-orange-400 text-white shadow-orange-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+                <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"></path>
+              </svg>
+            </div>
+            <div class="p-4 text-right">
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Sales</p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">$103,430</h4>
+            </div>
+            <div class="border-t border-blue-gray-50 p-4">
+              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                <strong class="text-green-500">+5%</strong>&nbsp;than yesterday
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-end">
+          <button data-ripple-light="true" data-dialog-target="dialog"
+          class="cursor-pointer mb-10 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white font-semibold">
+          <i class="fa fa-plus me-2" aria-hidden="true"></i>
+          Add new Task
+        </button>
+        </div>
+
+        <div id="modal" class="mt-10 bg-white shadow-2xl rounded-lg transition-all hidden -translate-y-10">
+          <header class="mb-4 border-b border-gray-200 px-12 pt-6 pb-3 flex justify-between">
+            <h1 class="text-2xl font-bold">Add New Task</h1>
+          </header>
+  
+          <div class="px-12 pt-3 pb-6 w-fill">
+            <form action="../api/tasks" method="post" class="mb-0 mt-8 w-full">
+              <div>
+                <label for="email" class="sr-only">Email</label>
+          
+                <div class="relative">
+                  <input
+                    name="task"
+                    type=text
+                    class="w-full rounded-lg border border-gray-200 focus:border-0 p-4 pe-12 text-sm shadow-sm font-semibold mb-2"
+                    placeholder="Enter a new task"
+                    id="task"
+                  />
+                </div>
+  
+                <div class="relative">
+                  <input
+                    name="date"
+                    type="datetime-local"
+                    class="w-full rounded-lg border border-gray-200 focus:border-0 p-4 pe-12 text-sm shadow-sm font-semibold mb-2"
+                    placeholder="Enter a new task"
+                    id="date"
+                  />
+                </div>
+              </div>
+              
+              <div class="row mt-5">
+                <button
+                  type="submit"
+                  class="me-2 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white font-semibold"
+                >
+                <i class="fa fa-plus me-2" aria-hidden="true"></i>
+                Add new Task</label>
+                </button>
+                <a 
+                  class="cursor-pointer col-6 inline-block rounded-lg bg-rose-500 px-5 py-3 text-sm font-medium text-white font-semibold"
+                  id="close"
+                  >
+                <i class="fa fa-times me-2" aria-hidden="true"></i>
+                Cancel</label>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="mb-4 w-full  gap-6 xl:grid-cols-3">
+          <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2">
+            <div class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
+              <div>
+                <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">Tasks</h6>
+                <p class="antialiased font-sans text-sm leading-normal flex items-center gap-1 font-normal text-blue-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" class="h-4 w-4 text-blue-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+                  </svg>
+                  <strong>{tasks.length}</strong> Tasks
+                </p>
+              </div>
+              <button aria-expanded="false" aria-haspopup="menu" id=":r5:" class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30" type="button">
+                <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currenColor" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div class="p-6 overflow-x-scroll px-0 pt-0 pb-2">
+              <table class="w-full min-w-[640px] table-auto">
+                <thead>
+                  <tr>
+                    <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
+                      <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Task</p>
+                    </th>
+                    <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
+                      <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Date</p>
+                    </th>
+                    <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
+                      <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Action</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {
+                      tasks.map((task) => (
+                        <tr>
+                          <td class="py-3 px-5 border-b border-blue-gray-50">
+                            <div class="flex items-center gap-4">
+                              <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">{task.task}</p>
+                            </div>
+                          </td>
+                          
+                          <td class="py-3 px-5 border-b border-blue-gray-50">
+            
+                            <time datetime={task.date} class="mr-8">
+                              {task.date.toString()}
+                            </time>
+                          </td>
+                          <td class="py-3 px-5 border-b border-blue-gray-50">
+                            <div class='flex items-center justify-center '>
+                              <div>
+                                  <a class="me-2 flex p-1.5 bg-green-500 rounded-xl hover:rounded-3xl hover:bg-green-600 transition-all duration-300 text-white"   href={`/Todo/${task.id}`}>
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                  </svg>
+                                  </a>
+                              </div>
+                              <div>
+                                <a class="flex p-1.5 bg-deep-orange-500 rounded-xl hover:rounded-3xl hover:bg-deep-orange-600 transition-all duration-300 text-white cursor-pointer" type="button" id="delete-document">
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                  </svg>
+                                </a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      ))
+                    }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  </div>
+
+  <div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true"
+  class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
+  <div data-dialog="dialog"
+    class="relative m-4 w-3/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl">
+    <div
+      class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
+      Add new task.
+    </div>
+    <div
+      class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t  border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
+      <form action="../api/tasks" method="post" class="mb-0 mt-8 w-full">
+        <div>
+          <label for="email" class="sr-only">Email</label>
+    
+          <div class="relative">
+            <input
+              name="task"
+              type=text
+              class="w-full rounded-lg border border-gray-200 focus:border-0 p-4 pe-12 text-sm shadow-sm font-semibold mb-2"
+              placeholder="Enter a new task"
+              id="task"
+            />
+          </div>
+
+          <div class="relative">
+            <input
+              name="date"
+              type="datetime-local"
+              class="w-full rounded-lg border border-gray-200 focus:border-0 p-4 pe-12 text-sm shadow-sm font-semibold mb-2"
+              placeholder="Enter a new task"
+              id="date"
+            />
+          </div>
+        </div>
+        
+        <div class="row mt-5">
+          <button
+            type="submit"
+            class="me-2 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white font-semibold"
+          >
+          <i class="fa fa-plus me-2" aria-hidden="true"></i>
+          Add new Task</label>
+          </button>
+          <a 
+            class="cursor-pointer col-6 inline-block rounded-lg bg-deep-orange-500 px-5 py-3 text-sm font-medium text-white font-semibold"
+            id="close"
+            >
+          <i class="fa fa-times me-2" aria-hidden="true"></i>
+          Cancel</label>
+          </a>
+        </div>
+      </form>
+    </div>
+    <div class="hidden flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
+      <button data-ripple-dark="true" data-dialog-close="true"
+        class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+        Cancel
+      </button>
+      <button data-ripple-light="true" data-dialog-close="true"
+        class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>  
+
+
+  <script>
+    const deleteButton = document.getElementById(
+      "delete-document"
+    ) as HTMLButtonElement;
+    const url = document.querySelector("form")?.getAttribute("action") as string;
+    deleteButton.addEventListener("click", async () => {
+      const response = await fetch(url, {
+        method: "DELETE",
+      });
+      if (response.redirected) {
+        window.location.assign(response.url);
+      }
+    });
+  </script>
+<TodoLayout />

@@ -1,0 +1,2 @@
+export const SITE_TITLE = 'Todo'
+export const SITE_DESCRIPTION = 'Experience productivity at its best with our ToDo List website. Stay organized, manage tasks efficiently, and achieve your goals effortlessly. Explore user-friendly features, intuitive design, and seamless collaboration for a streamlined task management experience. Boost your productivity with our powerful ToDo List tool. Start organizing your life today!'

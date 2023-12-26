@@ -1,0 +1,27 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION} from '../constants'
+const { title = 'Signin' } = Astro.props
+
+interface Props {
+    title?: string;
+}
+---
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={SITE_DESCRIPTION}>
+    <title>{SITE_TITLE} - {title}</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.svg">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <slot />
+</body>
+</html>
