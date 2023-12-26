@@ -58,16 +58,16 @@ const { title } = Astro.props
 
 
 	// Side Bar control
-	document.getElementById('toogleMenu')?.addEventListener('click', ((e) => {
+	document.getElementById('toogleMenu')?.addEventListener('click', () => {
 
 		const menu = document.querySelector('.menu');
 
 		menu?.classList.remove('-translate-x-80')
-	}))
+	})
 
-	document.querySelector('.close')?.addEventListener('click', ((e) => {
+	document.querySelector('.close')?.addEventListener('click', () => {
 		const menu = document.querySelector('.menu');
 
 	menu?.classList.add('-translate-x-80')
-	}))
+	})
 </script>

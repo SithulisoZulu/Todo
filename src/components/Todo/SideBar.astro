@@ -8,9 +8,16 @@ const auth = getAuth(app);
 if (!Astro.cookies.has("session")) {
   return Astro.redirect("/signin");
 }
-const sessionCookie = Astro.cookies.get("session")?.value;
-const decodedCookie = await auth.verifySessionCookie(sessionCookie);
-const user = await auth.getUser(decodedCookie.uid);
+const sessionCookie = Astro.cookies.get("session");
+var user
+if (sessionCookie) {
+  const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
+  user = await auth.getUser(decodedCookie.uid);
+  // rest of your code
+} else {
+  // Handle the case where the "session" cookie is undefined
+  console.error("Session cookie is undefined");
+}
 
 if (!user) {
   return Astro.redirect("/signin");
