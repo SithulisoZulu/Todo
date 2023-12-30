@@ -1,7 +1,7 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION} from '../constants'
 import  NavBar  from '../components/main/NavBar.astro'
-import  Footer  from '../components/main/Footer.astro'
+import  Footer  from '../components/Todo/Footer.astro'
 
 const { title } = Astro.props
 ---
@@ -51,7 +51,7 @@ const { title } = Astro.props
 
     <slot />
 
-    <Footer />
+	<Footer />
 
   <!-- jQuery if you need it
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

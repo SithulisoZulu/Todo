@@ -1,0 +1,42 @@
+---
+import { app } from "../../../firebase/server";
+import { getFirestore } from "firebase-admin/firestore";
+import TodoLayout from "../../../layouts/TodoLayout.astro";
+
+import TopNav from "../../../components/Todo/TopNav.astro";
+import Footer from "../../../components/Todo/Footer.astro";
+
+interface Task {
+  task: string;
+  date: Date;
+
+}
+
+const { id } = Astro.params;
+
+if (!id) {
+  return Astro.redirect("/404");
+}
+
+const db = getFirestore(app);
+const tasksRef = db.collection("tasks");
+const taskSnapshot = await tasksRef.doc(id).get();
+
+if (!taskSnapshot.exists) {
+  return Astro.redirect("/404");
+}
+
+const task = taskSnapshot.data() as Task;
+
+---
+
+
+<TodoLayout title={task.task}/>
+  <div class="min-h-screen bg-gray-50/50">
+    <div class="p-4 xl:ml-80">
+      <TopNav page="Task Details"/>
+      {task.task}
+      <Footer />
+    </div>
+  </div>
+  
